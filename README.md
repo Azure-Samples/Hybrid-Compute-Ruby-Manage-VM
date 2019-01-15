@@ -1,3 +1,9 @@
+---
+services: Azure-Stack
+platforms: ruby
+author: viananth
+---
+
 # Hybrid-Compute-Ruby-Manage-VM
 This sample demonstrates how to manage your Azure virtual machines using the Ruby SDK.
 
