@@ -116,11 +116,11 @@ This sample starts by setting up ResourceManagementClient, the resource provider
       base_url: ENV['ARM_ENDPOINT']
   }
 
-  # Create resource clients with AzureStack supported profile 2018-03-01-hybrid
-  resource_client = Azure::Resources::Profiles::V2018_03_01::Mgmt::Client.new(options)
-  network_client = Azure::Network::Profiles::V2018_03_01::Mgmt::Client.new(options)
-  storage_client = Azure::Storage::Profiles::V2018_03_01::Mgmt::Client.new(options)
-  compute_client = Azure::Compute::Profiles::V2018_03_01::Mgmt::Client.new(options)
+  # Create resource clients with AzureStack supported profile 2019-03-01-hybrid
+  resource_client = Azure::Resources::Profiles::V2019_03_01_Hybrid::Mgmt::Client.new(options)
+  network_client = Azure::Network::Profiles::V2019_03_01_Hybrid::Mgmt::Client.new(options)
+  storage_client = Azure::Storage::Profiles::V2019_03_01_Hybrid::Mgmt::Client.new(options)
+  compute_client = Azure::Compute::Profiles::V2019_03_01_Hybrid::Mgmt::Client.new(options)
 
 resource_group_params = Azure::ARM::Resources::Models::ResourceGroup.new.tap do |rg|
     rg.location = REGION

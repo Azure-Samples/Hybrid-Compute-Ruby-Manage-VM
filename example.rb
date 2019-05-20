@@ -8,10 +8,10 @@ require 'azure_mgmt_compute'
 LOCAL = ENV['AZURE_RESOURCE_LOCATION']
 GROUP_NAME = 'azurestack-sample_group'
 
-Storage = Azure::Storage::Profiles::V2018_03_01::Mgmt
-Network = Azure::Network::Profiles::V2018_03_01::Mgmt
-Compute = Azure::Compute::Profiles::V2018_03_01::Mgmt
-Resources = Azure::Resources::Profiles::V2018_03_01::Mgmt
+Storage = Azure::Storage::Profiles::V2019_03_01_Hybrid::Mgmt
+Network = Azure::Network::Profiles::V2019_03_01_Hybrid::Mgmt
+Compute = Azure::Compute::Profiles::V2019_03_01_Hybrid::Mgmt
+Resources = Azure::Resources::Profiles::V2019_03_01_Hybrid::Mgmt
 
 StorageModels = Storage::Models
 NetworkModels = Network::Models
@@ -54,10 +54,10 @@ def run_example
       base_url: ENV['ARM_ENDPOINT']
   }
 
-  resource_client = Azure::Resources::Profiles::V2018_03_01::Mgmt::Client.new(options)
-  network_client = Azure::Network::Profiles::V2018_03_01::Mgmt::Client.new(options)
-  storage_client = Azure::Storage::Profiles::V2018_03_01::Mgmt::Client.new(options)
-  compute_client = Azure::Compute::Profiles::V2018_03_01::Mgmt::Client.new(options)
+  resource_client = Resources::Client.new(options)
+  network_client = Network::Client.new(options)
+  storage_client = Storage::Client.new(options)
+  compute_client = Compute::Client.new(options)
 
   #
   # Managing resource groups
